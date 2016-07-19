@@ -1,39 +1,20 @@
 
-Android RepeatingAlarm Sample
+Android N Parceler AlarmManager/Broadcast Issue reproduction.
 ===================================
+THIS IS A FORK OF https://github.com/googlesamples/android-RepeatingAlarm
 
-Introductory text that explains what the sample is intended to demonstrate. Edit
-in template-params.xml.
+Open issue on the tracker:
+https://code.google.com/p/android/issues/detail?id=216581&thanks=216581&ts=1468962325
 
-Pre-requisites
---------------
+S/O post:
+http://stackoverflow.com/questions/38466080/dp5-7-0-does-adding-extras-to-a-pending-intent-fail
 
-- Android SDK v23
-- Android Build Tools v23.0.3
-- Android Support Repository
-
-Getting Started
----------------
-
-This sample uses the Gradle build system. To build this project, use the
-"gradlew build" command or use "Import Project" in Android Studio.
-
-Support
--------
-
-- Google+ Community: https://plus.google.com/communities/105153134372062985968
-- Stack Overflow: http://stackoverflow.com/questions/tagged/android
-
-If you've found an error in this sample, please file an issue:
-https://github.com/googlesamples/android-RepeatingAlarm
-
-Patches are encouraged, and may be submitted by forking this project and
-submitting a pull request through GitHub. Please see CONTRIBUTING.md for more details.
+Running the code in this project will enable the developer to analyze the logs and see that a Parceled extra combined with a long value in an intent within PendingIntent will not be correctly unmarshalled upon receit in the Broadcast Receiver (AlarmManagerUtil.java) only in Android N (Developer Preview)
 
 License
 -------
 
-Copyright 2014 The Android Open Source Project, Inc.
+Copyright 2016 The Android Open Source Project, Inc.
 
 Licensed to the Apache Software Foundation (ASF) under one or more contributor
 license agreements.  See the NOTICE file distributed with this work for
