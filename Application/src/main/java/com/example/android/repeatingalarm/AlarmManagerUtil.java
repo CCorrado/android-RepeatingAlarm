@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import org.parceler.Parcels;
+
 /**
  * This class is used to clear, schedule the next notification for users
  */
@@ -21,7 +23,7 @@ public class AlarmManagerUtil extends BroadcastReceiver {
         String action = intent.getAction();
         switch (action) {
             case SET_NOTIFICATION_INTENT:
-                ParcelModel parcelModel = intent.getParcelableExtra(PARCEL_EXTRA);
+                ParcelModel parcelModel = Parcels.unwrap(intent.getParcelableExtra(PARCEL_EXTRA));
                 if (parcelModel == null) {
                     Log.e(TAG, "Parcel Model was empty :(");
                 } else {
